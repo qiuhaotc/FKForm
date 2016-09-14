@@ -1,31 +1,52 @@
 ﻿@{
+    Layout = "";
     ViewBag.Title = "Home Page";
 }
+<!DOCTYPE html>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Content/HighLightTool/shCoreDefault.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/FCFormUtil.js"></script>
+    <script src="Scripts/HighLightTool/shCore.js"></script>
+    <script src="Scripts/HighLightTool/shBrushJScript.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script>
+        @Html.Raw(ViewBag.ValidateScript)
+        @Html.Raw(ViewBag.BackValidateScript)
+    </script>
+</head>
+<body class="label">
+    <div class="row">
+        <form id="form1" method="post" action="/home/Post">
+            <div>
+                姓名：<input type="text" name="Name" id="Name" /><br />
+                年龄：<input type="text" name="Ages" id="Ages" /><br />
+                金额：<input type="text" name="Money" id="Money" /><br />
+                简介：<input type="text" name="Memo" id="Memo" /><br />
+                密码：<input type="text" name="Password" id="Password" /><br />
+                重复密码：<input type="text" name="PasswordRepeat" id="PasswordRepeat" /><br />
+                区域：
+                <select name="Area" id="Area">
+                    <option value="">---请选择---</option>
+                    <option value="1">---北京---</option>
+                    <option value="2">---上海---</option>
+                    <option value="3">---广州---</option>
+                </select><br />
+                电话：<input type="text" name="PhoneNum" id="PhoneNum" /><br />
+                <input onclick="return validateForm();" value="提交" type="submit" />
+                <input onclick="return validateAjaxForm('/home/test');" value="Ajax提交" type="submit" />
+            </div>
+        </form>
+        <div>
+            <pre class="brush: js;">
+var =@ViewBag.ValidateScript.Replace("},{","},\r\n{").Replace("],[","],\r\n[").Replace("=[","=[\r\n").Replace("[{","[\r\n{").Replace("}]","}\r\n]")%>
+    </pre>
+        </div>
+        <div id="message">
+        </div>
+        </div>
+</body>

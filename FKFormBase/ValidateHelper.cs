@@ -1,4 +1,5 @@
-﻿using FKForm.IFKFormBase;
+﻿using System;
+using FKForm.IFKFormBase;
 
 namespace FKForm.FKFormBase
 {
@@ -23,11 +24,32 @@ namespace FKForm.FKFormBase
         /// <param name="context"></param>
         /// <param name="autoSetValue">自动赋值</param>
         /// <returns></returns>
-        public static bool ValidateItem(object model, IValidateBase valiBase, System.Web.HttpContext context, bool autoSetValue = true)
+        public static bool ValidateItem(object model, IValidateBase valiBase, System.Web.HttpRequest request, bool autoSetValue = true)
         {
-            valiBase.SetContext(context);
+            valiBase.SetContext(request);
             valiBase.SetModel(model, autoSetValue);
             return valiBase.ValidForm(autoSetValue);
         }
+
+        /// <summary>
+        /// 生成后台校验完成的错误Javascript代码
+        /// </summary>
+        /// <param name="valiBase"></param>
+        /// <param name="data"></param>
+        public static void RenderBackJavaScriptAjaxValidateString(IValidateBase valiBase, dynamic data)
+        {
+            data.BackValidateScript = valiBase.RenderJavaScriptValidateString();
+        }
+
+        /// <summary>
+        /// 生成前端校验Scripts 保存在 ValidateScript 中
+        /// </summary>
+        /// <param name="valiBase"></param>
+        /// <param name="data"></param>
+        public static void RenderJavaScriptValidateString(IValidateBase valiBase,dynamic data)
+        {
+            data.ValidateScript = valiBase.RenderJavaScriptValidateString();
+        }
+
     }
 }

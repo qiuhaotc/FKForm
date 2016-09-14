@@ -20,9 +20,9 @@ namespace FKForm.FKFormBase
         {
         }
 
-        public ValidateBase(System.Web.HttpContext context)
+        public ValidateBase(System.Web.HttpRequest context)
         {
-            this.Context = context;
+            this.Request = context;
         }
 
         static ValidateBase()
@@ -40,7 +40,7 @@ namespace FKForm.FKFormBase
 
         public List<IErrorItems> ErrorItemsList { get; set; }
 
-        public System.Web.HttpContext Context
+        public System.Web.HttpRequest Request
         {
             get;
             set;
@@ -86,7 +86,7 @@ namespace FKForm.FKFormBase
         {
             if (AutoSetValue)
             {
-                if (Context == null)
+                if (Request == null)
                 {
                     throw new ArgumentNullException("Context");
                 }
@@ -95,7 +95,7 @@ namespace FKForm.FKFormBase
                     ValueStrList = new List<string>();
                     foreach (var validateItem in ValidateInfoListStatic)
                     {
-                        string value = Context.Request[validateItem.PropInfo.Name];
+                        string value = Request[validateItem.PropInfo.Name];
 
                         string valueStr = GetFormatValueString(value);
 
@@ -273,6 +273,15 @@ namespace FKForm.FKFormBase
         }
 
         /// <summary>
+        /// 获取后台校验错误项目
+        /// </summary>
+        /// <returns></returns>
+        public IList<IErrorItems> GetBackJavaScriptValidateItems()
+        {
+            return ErrorItemsList;
+        }
+
+        /// <summary>
         /// 生成Ajax校验后Script
         /// </summary>
         /// <returns></returns>
@@ -282,9 +291,9 @@ namespace FKForm.FKFormBase
             return string.Format(FormControlPublicValue.JavaScriptServerValidateAjaxScript, strJsonStr);
         }
 
-        public void SetContext(System.Web.HttpContext context)
+        public void SetContext(System.Web.HttpRequest request)
         {
-            this.Context = context;
+            this.Request = request;
         }
 
         private string RenderJsonItem()

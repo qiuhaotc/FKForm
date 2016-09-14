@@ -23,7 +23,7 @@ namespace TestFCForm
                 if (Request["Ajax"] == "true")
                 {
                     ModelTest test = new ModelTest();
-                    FKForm.FKFormBase.ValidateHelper.ValidateItem(test, validateBase, Context, true);
+                    FKForm.FKFormBase.ValidateHelper.ValidateItem(test, validateBase, Context.Request, true);
                     Response.Write(validateBase.RenderBackJavaScriptAjaxValidateString());
                     Response.End();
                 }
@@ -39,7 +39,7 @@ namespace TestFCForm
         {
             ModelTest test = new ModelTest( );
 
-            if (FKForm.FKFormBase.ValidateHelper.ValidateItem(test, validateBase, Context, true))
+            if (FKForm.FKFormBase.ValidateHelper.ValidateItem(test, validateBase, Context.Request, true))
             {
                 Response.Write("正确");
                 Response.Write(Newtonsoft.Json.JsonConvert.SerializeObject(test));

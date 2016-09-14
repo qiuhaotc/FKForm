@@ -1,4 +1,6 @@
-﻿namespace FKForm.IFKFormBase
+﻿using System.Collections.Generic;
+
+namespace FKForm.IFKFormBase
 {
     /// <summary>
     /// 数据校验接口
@@ -14,7 +16,7 @@
         /// <summary>
         /// 请求上下文
         /// </summary>
-        System.Web.HttpContext Context { get; set; }
+        System.Web.HttpRequest Request { get; set; }
 
         /// <summary>
         /// 设置待校验模型
@@ -61,11 +63,17 @@
         string RenderBackJavaScriptAjaxValidateString();
 
         /// <summary>
+        /// 获取校验错误的项目信息
+        /// </summary>
+        /// <returns></returns>
+        IList<IErrorItems> GetBackJavaScriptValidateItems();
+
+        /// <summary>
         /// 设置当前的数据上下文
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        void SetContext(System.Web.HttpContext context);
+        void SetContext(System.Web.HttpRequest context);
 
         /// <summary>
         /// 增加自定义错误项

@@ -149,14 +149,35 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomAjaxAttribute\CustomTestAttr.cs" />
+    <Compile Include="CustomAjaxAttribute\TestAjaxAttrLength.cs" />
+    <Compile Include="CustomAjaxAttribute\ValidateTestMethod.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\HighLightTool\shCore.css" />
+    <Content Include="Content\HighLightTool\shCoreDefault.css" />
+    <Content Include="Content\HighLightTool\shCoreDjango.css" />
+    <Content Include="Content\HighLightTool\shCoreEclipse.css" />
+    <Content Include="Content\HighLightTool\shCoreEmacs.css" />
+    <Content Include="Content\HighLightTool\shCoreFadeToGrey.css" />
+    <Content Include="Content\HighLightTool\shCoreMDUltra.css" />
+    <Content Include="Content\HighLightTool\shCoreMidnight.css" />
+    <Content Include="Content\HighLightTool\shCoreRDark.css" />
+    <Content Include="Content\HighLightTool\shThemeDefault.css" />
+    <Content Include="Content\HighLightTool\shThemeDjango.css" />
+    <Content Include="Content\HighLightTool\shThemeEclipse.css" />
+    <Content Include="Content\HighLightTool\shThemeEmacs.css" />
+    <Content Include="Content\HighLightTool\shThemeFadeToGrey.css" />
+    <Content Include="Content\HighLightTool\shThemeMDUltra.css" />
+    <Content Include="Content\HighLightTool\shThemeMidnight.css" />
+    <Content Include="Content\HighLightTool\shThemeRDark.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -169,6 +190,35 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\FCFormUtil.js" />
+    <Content Include="Scripts\HighLightTool\shAutoloader.js" />
+    <Content Include="Scripts\HighLightTool\shBrushAppleScript.js" />
+    <Content Include="Scripts\HighLightTool\shBrushAS3.js" />
+    <Content Include="Scripts\HighLightTool\shBrushBash.js" />
+    <Content Include="Scripts\HighLightTool\shBrushColdFusion.js" />
+    <Content Include="Scripts\HighLightTool\shBrushCpp.js" />
+    <Content Include="Scripts\HighLightTool\shBrushCSharp.js" />
+    <Content Include="Scripts\HighLightTool\shBrushCss.js" />
+    <Content Include="Scripts\HighLightTool\shBrushDelphi.js" />
+    <Content Include="Scripts\HighLightTool\shBrushDiff.js" />
+    <Content Include="Scripts\HighLightTool\shBrushErlang.js" />
+    <Content Include="Scripts\HighLightTool\shBrushGroovy.js" />
+    <Content Include="Scripts\HighLightTool\shBrushJava.js" />
+    <Content Include="Scripts\HighLightTool\shBrushJavaFX.js" />
+    <Content Include="Scripts\HighLightTool\shBrushJScript.js" />
+    <Content Include="Scripts\HighLightTool\shBrushPerl.js" />
+    <Content Include="Scripts\HighLightTool\shBrushPhp.js" />
+    <Content Include="Scripts\HighLightTool\shBrushPlain.js" />
+    <Content Include="Scripts\HighLightTool\shBrushPowerShell.js" />
+    <Content Include="Scripts\HighLightTool\shBrushPython.js" />
+    <Content Include="Scripts\HighLightTool\shBrushRuby.js" />
+    <Content Include="Scripts\HighLightTool\shBrushSass.js" />
+    <Content Include="Scripts\HighLightTool\shBrushScala.js" />
+    <Content Include="Scripts\HighLightTool\shBrushSql.js" />
+    <Content Include="Scripts\HighLightTool\shBrushVb.js" />
+    <Content Include="Scripts\HighLightTool\shBrushXml.js" />
+    <Content Include="Scripts\HighLightTool\shCore.js" />
+    <Content Include="Scripts\HighLightTool\shLegacy.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -197,7 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -208,6 +257,24 @@
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FKFormBase\FKFormBase.csproj">
+      <Project>{d8e04171-c880-4eb2-8529-6ff087ec3fbd}</Project>
+      <Name>FKFormBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FKFormControl\FKFormControl.csproj">
+      <Project>{c19bcf4a-1cf3-4db0-ac40-9c50bc9eb70e}</Project>
+      <Name>FKFormControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FKValidateModel\FKValidateModel.csproj">
+      <Project>{6FBFAA06-C473-4537-838D-78075C29FF45}</Project>
+      <Name>FKValidateModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IFKFormBase\IFKFormBase.csproj">
+      <Project>{34c8be67-09a7-409e-9683-a579d484f5e0}</Project>
+      <Name>IFKFormBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

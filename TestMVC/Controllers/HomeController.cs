@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FKForm.FKFormBase;
+using FKForm.FKValidateModel;
+using TestMVC.CustomAjaxAttribute;
+using TestMVC.Models;
 
 namespace TestMVC.Controllers
 {
@@ -10,21 +14,48 @@ namespace TestMVC.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            var validate = ValidateHelper.GetValidateItems<ModelTest>();
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            ValidateHelper.RenderJavaScriptValidateString(validate, ViewBag);
 
             return View();
         }
 
-        public ActionResult Contact()
+        public JsonResult Test(ModelTest model)
         {
-            ViewBag.Message = "Your contact page.";
+            var validate = ValidateHelper.GetValidateItems<ModelTest>();
+            
+            ValidateHelper.ValidateItem(model, validate, null, false);
 
-            return View();
+            validate.AddErrorItem(new ErrorItems() {
+                ControlID = "Name",
+                ErrorStr = "新增自定义错误",
+                ValidateType = "custom",
+            });
+
+            return Json(validate.GetBackJavaScriptValidateItems());
+
+        }
+
+        public JsonResult TestAjax()
+        {
+            string controlID = Request["controlID"];
+
+            string value = Request["value"];
+
+            ValidateTestMethod test = new ValidateTestMethod();
+            ValidateJsonResult model = new ValidateJsonResult();
+
+            model.ControlID = controlID;
+
+            model.IsValid = test.IsValid(value);
+
+            if (!model.IsValid)
+            {
+                model.ErrorStr = "请为[简介]输入字数少于10的值";
+            }
+            
+            return Json(model);
         }
     }
 }
