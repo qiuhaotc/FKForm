@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFKFormBase", "IFKFormBase\IFKFormBase.csproj", "{34C8BE67-09A7-409E-9683-A579D484F5E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FKValidateModel", "FKValidateModel\FKValidateModel.csproj", "{6FBFAA06-C473-4537-838D-78075C29FF45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FKFormBase", "FKFormBase\FKFormBase.csproj", "{D8E04171-C880-4EB2-8529-6FF087EC3FBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FKFormControl", "FKFormControl\FKFormControl.csproj", "{C19BCF4A-1CF3-4DB0-AC40-9C50BC9EB70E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFKForm", "TestFKForm\TestFKForm.csproj", "{4B8F798A-1189-4F02-A759-864DA022CC58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FKFormConfig", "FKFormConfig\FKFormConfig.csproj", "{ED5F44B8-127F-4379-BD34-FFD96D5D26FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMVC", "TestMVC\TestMVC.csproj", "{A342C70C-2074-4EDD-B34C-FA47B585A3C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34C8BE67-09A7-409E-9683-A579D484F5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C8BE67-09A7-409E-9683-A579D484F5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C8BE67-09A7-409E-9683-A579D484F5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C8BE67-09A7-409E-9683-A579D484F5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FBFAA06-C473-4537-838D-78075C29FF45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FBFAA06-C473-4537-838D-78075C29FF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FBFAA06-C473-4537-838D-78075C29FF45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FBFAA06-C473-4537-838D-78075C29FF45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E04171-C880-4EB2-8529-6FF087EC3FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E04171-C880-4EB2-8529-6FF087EC3FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E04171-C880-4EB2-8529-6FF087EC3FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E04171-C880-4EB2-8529-6FF087EC3FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19BCF4A-1CF3-4DB0-AC40-9C50BC9EB70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19BCF4A-1CF3-4DB0-AC40-9C50BC9EB70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19BCF4A-1CF3-4DB0-AC40-9C50BC9EB70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19BCF4A-1CF3-4DB0-AC40-9C50BC9EB70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8F798A-1189-4F02-A759-864DA022CC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8F798A-1189-4F02-A759-864DA022CC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8F798A-1189-4F02-A759-864DA022CC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8F798A-1189-4F02-A759-864DA022CC58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5F44B8-127F-4379-BD34-FFD96D5D26FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5F44B8-127F-4379-BD34-FFD96D5D26FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5F44B8-127F-4379-BD34-FFD96D5D26FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5F44B8-127F-4379-BD34-FFD96D5D26FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A342C70C-2074-4EDD-B34C-FA47B585A3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A342C70C-2074-4EDD-B34C-FA47B585A3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A342C70C-2074-4EDD-B34C-FA47B585A3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A342C70C-2074-4EDD-B34C-FA47B585A3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

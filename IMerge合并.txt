@@ -1,0 +1,4 @@
+¡¡ILmerge /ndebug /target:dll /out:C:\FKForm.dll /log C:\file1.dll C:\file2.dll 
+
+
+ILMerge.exe /target:library /targetplatform:v4 /out:G:\FKForm\FKForm\ForGits\FKForm.dll "G:\FKForm\FKForm\ForGits\FCFormControl\bin\Debug\*.dll"  /wildcards /allowDup
